@@ -35,6 +35,8 @@ class OnboardingViewController: UIViewController {
             OnboardingScreens(title: "Quick and Easy Ordering", description: "Place your order in just a few taps. Customize your meal exactly the way you like it and enjoy a hassle-free checkout process.", image: .eatingFood) ,
             OnboardingScreens(title: "Track Your Delivery", description: "Stay updated with real-time tracking. Know exactly when your order will arrive, so you can enjoy your meal fresh and hot.", image: .searchFood)
         ]
+        
+        pageControl.numberOfPages = screens.count
 
     }
     
