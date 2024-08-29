@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
     @IBOutlet var uiview : UIView!
-
+    
+    
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +29,19 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func loginClicked(_ sender: Any) {
-        let homePage = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
-        homePage.modalPresentationStyle = .fullScreen
-        homePage.modalTransitionStyle = .crossDissolve
-        present(homePage, animated: true, completion: nil)
+        guard let email = emailTF.text else { return }
+        guard let password = passwordTF.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { firebaseResult, error in
+            if let e = error {
+                print("Error: \(e.localizedDescription)")
+            } else {
+                let homePage = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
+                homePage.modalPresentationStyle = .fullScreen
+                homePage.modalTransitionStyle = .crossDissolve
+                self.present(homePage, animated: true, completion: nil)
+            }
+        }
     }
     
     

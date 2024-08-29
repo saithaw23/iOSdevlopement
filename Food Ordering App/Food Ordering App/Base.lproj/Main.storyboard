@@ -284,6 +284,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="gnm-Tw-hJu"/>
                     <connections>
+                        <outlet property="emailTF" destination="0qm-QD-UO0" id="x94-BL-cmt"/>
+                        <outlet property="passwordTF" destination="ZiT-S9-IrK" id="jZG-l9-pIu"/>
                         <outlet property="uiview" destination="MFN-9s-xav" id="Ory-6W-ehB"/>
                     </connections>
                 </viewController>
@@ -349,7 +351,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="50" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJG-Xr-Hz7">
                                                         <rect key="frame" x="0.0" y="30.666666666666686" width="353" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" textContentType="new-password"/>
+                                                        <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -377,7 +379,7 @@
                                             <constraint firstAttribute="height" constant="50" id="MeV-Bt-Ut8"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="SIGN UP">
+                                        <buttonConfiguration key="configuration" style="filled" title="CREATE AN ACCOUNT">
                                             <color key="baseBackgroundColor" red="0.97763591999999999" green="0.44541102649999997" blue="0.12630569929999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
@@ -433,6 +435,12 @@
                             <constraint firstItem="y8Y-cP-Zxn" firstAttribute="centerX" secondItem="lf9-X9-3dE" secondAttribute="centerX" id="ySd-EN-WXQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTF" destination="wzH-yY-wpw" id="4AV-FU-TfJ"/>
+                        <outlet property="nameTF" destination="4gE-dJ-1Uh" id="Qcb-Fu-Z8V"/>
+                        <outlet property="passwordTF" destination="lJG-Xr-Hz7" id="wIO-ar-7oX"/>
+                        <outlet property="retypepasswordTF" destination="SVJ-hd-DpV" id="KvT-xi-AIU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBw-jf-kUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -452,7 +460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7t-Yr-fha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3185.4961832061067" y="-1116.1971830985915"/>
+            <point key="canvasLocation" x="4024" y="-1226"/>
         </scene>
         <!--Otaku Eats-->
         <scene sceneID="QFm-tM-fJz">
@@ -468,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6R-iX-hR0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5722.900763358778" y="-546.47887323943667"/>
+            <point key="canvasLocation" x="5088" y="-494"/>
         </scene>
         <!--Favourite Shop-->
         <scene sceneID="hAc-yn-38i">
@@ -484,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBm-Lv-wTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4796.1832061068699" y="213.38028169014086"/>
+            <point key="canvasLocation" x="5088" y="213"/>
         </scene>
         <!--Profile-->
         <scene sceneID="NSd-Ht-v9P">
@@ -556,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwk-wM-WTw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3185.4961832061067" y="906.33802816901414"/>
+            <point key="canvasLocation" x="4024" y="967"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yvE-nz-Lf1">
@@ -618,7 +626,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWw-Ds-jub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2258.7786259541986" y="906.33802816901414"/>
+            <point key="canvasLocation" x="2865" y="558"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZHL-he-BpR">
@@ -637,7 +645,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yp5-Xo-5ar" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2258.7786259541986" y="-1116.1971830985915"/>
+            <point key="canvasLocation" x="2865" y="-1090"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RJE-th-ITd">
@@ -656,7 +664,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9r1-RI-6tW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3869.4656488549617" y="213.38028169014086"/>
+            <point key="canvasLocation" x="4024" y="213"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i5l-lc-Uu4">
@@ -675,7 +683,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTD-DF-qZ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4796.1832061068699" y="-546.47887323943667"/>
+            <point key="canvasLocation" x="4025" y="-494"/>
         </scene>
     </scenes>
     <resources>
