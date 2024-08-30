@@ -24,14 +24,24 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signupBtnClicked(_ sender: UIButton) {
         
-        guard let name = nameTF.text else { return }
-        guard let email = emailTF.text else { return }
-        guard let password = passwordTF.text else { return }
+        guard let name = nameTF.text else {
+            return
+        }
+        guard let email = emailTF.text else {
+            return
+        }
+        guard let password = passwordTF.text else {
+            return
+        }
+        guard let retypePassword = retypepasswordTF.text else {
+            return
+        }
         
         Auth.auth().createUser(withEmail: email, password: password) { firebaseResult, error in
             if let e = error {
-                print("Error: \(e.localizedDescription)")
-            }else {
+                self.showAlert(message: e.localizedDescription)
+                
+            }else{
                 let homePage = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
                 homePage.modalPresentationStyle = .fullScreen
                 homePage.modalTransitionStyle = .crossDissolve
@@ -39,6 +49,12 @@ class SignUpViewController: UIViewController {
             }
             
         }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

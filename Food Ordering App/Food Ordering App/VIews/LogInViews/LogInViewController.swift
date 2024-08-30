@@ -28,13 +28,19 @@ class LogInViewController: UIViewController {
  
     }
     
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func loginClicked(_ sender: Any) {
         guard let email = emailTF.text else { return }
         guard let password = passwordTF.text else { return }
         
         Auth.auth().signIn(withEmail: email, password: password) { firebaseResult, error in
             if let e = error {
-                print("Error: \(e.localizedDescription)")
+                self.showAlert(message: e.localizedDescription)
             } else {
                 let homePage = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
                 homePage.modalPresentationStyle = .fullScreen
@@ -43,6 +49,7 @@ class LogInViewController: UIViewController {
             }
         }
     }
+    
     
     
     @IBAction func signInBtnClicked(_ sender: UIButton) {
