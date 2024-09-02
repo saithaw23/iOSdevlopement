@@ -9,7 +9,6 @@ import UIKit
 import FirebaseAuth
 
 class LogInViewController: UIViewController {
-    @IBOutlet var uiview : UIView!
     
     
     @IBOutlet weak var emailTF: UITextField!
@@ -18,14 +17,12 @@ class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        uiview.layer.cornerRadius = 20
-//        let backButton = UIBarButtonItem()
-//        backButton.title = ""
-//        navigationItem.backBarButtonItem = backButton
         navigationController?.navigationBar.tintColor = UIColor.white
- 
+        
+        if FirebaseAuth.Auth.auth().currentUser != nil {
+            navigateToHomeScreen()
+            
+        }
     }
     
     func showAlert(message: String) {
@@ -42,10 +39,7 @@ class LogInViewController: UIViewController {
             if let e = error {
                 self.showAlert(message: e.localizedDescription)
             } else {
-                let homePage = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
-                homePage.modalPresentationStyle = .fullScreen
-                homePage.modalTransitionStyle = .crossDissolve
-                self.present(homePage, animated: true, completion: nil)
+                self.navigateToHomeScreen()
             }
         }
     }
@@ -57,6 +51,12 @@ class LogInViewController: UIViewController {
         navigationController?.pushViewController( signupPage, animated: true)
     }
     
+    func navigateToHomeScreen(){
+        let homePage = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
+        homePage.modalPresentationStyle = .fullScreen
+        homePage.modalTransitionStyle = .coverVertical
+        self.present(homePage, animated: true, completion: nil)
+    }
 
 
 }

@@ -61,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA25761D2C82F6BE001DB1DE /* tabViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA415B082C801A59006BBC12 /* ProfileViewController.swift */,
+				FACBCBF82C7F479300E734E7 /* HomePageViewController.swift */,
+			);
+			path = tabViewControllers;
+			sourceTree = "<group>";
+		};
 		FA415B052C8008FA006BBC12 /* LogInViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +104,6 @@
 				FACBCBE42C7F330300E734E7 /* AppDelegate.swift */,
 				FACBCBE62C7F330300E734E7 /* SceneDelegate.swift */,
 				FACBCBEA2C7F330300E734E7 /* Main.storyboard */,
-				FA415B082C801A59006BBC12 /* ProfileViewController.swift */,
-				FACBCBF82C7F479300E734E7 /* HomePageViewController.swift */,
 				FACBCBED2C7F330400E734E7 /* Assets.xcassets */,
 				FACBCBEF2C7F330400E734E7 /* LaunchScreen.storyboard */,
 				FACBCBF22C7F330400E734E7 /* Info.plist */,
@@ -108,6 +115,7 @@
 		FACBCBFA2C7F733C00E734E7 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
+				FA25761D2C82F6BE001DB1DE /* tabViewControllers */,
 				FA415B052C8008FA006BBC12 /* LogInViews */,
 				FACBCBFC2C7F73EF00E734E7 /* Onboarding */,
 			);
